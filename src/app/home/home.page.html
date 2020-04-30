@@ -7,14 +7,25 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-content>
+      <form (submit)="uploadPhoto(title, description)">
+        <ion-item>
+          <ion-label>titulo</ion-label>
+          <ion-input type="text" #title required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>descripcion </ion-label>
+          <ion-input type="text" equired #description></ion-input>
+        </ion-item>
+        <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+        <img [src]="photoSelected || 'assets/no-image.png'" class="img-fluid" alt="No image"
+            (click)="photoInput.click()">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+        <button class="btn btn-primary btn-block">
+            Upload
+        </button>
+    </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
