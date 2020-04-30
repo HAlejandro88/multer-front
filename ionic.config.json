@@ -1,0 +1,7 @@
+{
+  "name": "conjunto",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
