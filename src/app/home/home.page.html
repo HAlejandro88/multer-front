@@ -16,9 +16,9 @@
         </ion-item>
         <ion-item>
           <ion-label>descripcion </ion-label>
-          <ion-input type="text" equired #description></ion-input>
+          <ion-input type="text" required #description></ion-input>
         </ion-item>
-        <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+        <input type="file" (change)="onPhotoSelected($event)" #photoInput>
         <img [src]="photoSelected || 'assets/no-image.png'" class="img-fluid" alt="No image"
             (click)="photoInput.click()">
 
